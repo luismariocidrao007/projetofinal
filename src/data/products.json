@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Mochila Executiva Impermeável 30L",
+    "price": 189.9,
+    "description": "Mochila resistente à água com compartimento acolchoado para notebook de até 15,6 polegadas, alças ergonômicas e porta USB lateral.",
+    "category": "bolsas e mochilas",
+    "image": "https://images.unsplash.com/photo-1505308144658-03c69861061a",
+    "rating": {
+      "rate": 4.2,
+      "count": 318
+    }
+  },
+  {
+    "id": 2,
+    "title": "Anel Feminino Folheado a Ouro 18k com Zircônia",
+    "price": 1290,
+    "description": "Anel delicado folheado a ouro 18k com pedra de zircônia cúbica, acabamento antialérgico e embalagem para presente inclusa.",
+    "category": "joias e acessórios",
+    "image": "https://images.unsplash.com/photo-1629118639934-2b241503956c",
+    "rating": {
+      "rate": 4.7,
+      "count": 203
+    }
+  },
+  {
+    "id": 3,
+    "title": "Camiseta Estampada Unissex",
+    "price": 49.9,
+    "description": "Camiseta de algodão com estampa moderna, disponível em várias cores e tamanhos.",
+    "category": "roupas",
+    "image": "https://images.unsplash.com/photo-1520975917360-9c8b1e5f1a2b",
+    "rating": {
+      "rate": 0,
+      "count": 0
+    }
+  }
+]
