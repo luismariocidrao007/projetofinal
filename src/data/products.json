@@ -1,17 +1,5 @@
 [
   {
-    "id": 1,
-    "title": "Mochila Executiva Impermeável 30L",
-    "price": 189.9,
-    "description": "Mochila resistente à água com compartimento acolchoado para notebook de até 15,6 polegadas, alças ergonômicas e porta USB lateral.",
-    "category": "bolsas e mochilas",
-    "image": "https://images.unsplash.com/photo-1505308144658-03c69861061a",
-    "rating": {
-      "rate": 4.2,
-      "count": 318
-    }
-  },
-  {
     "id": 2,
     "title": "Anel Feminino Folheado a Ouro 18k com Zircônia",
     "price": 1290,

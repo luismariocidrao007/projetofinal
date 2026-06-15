@@ -42,5 +42,51 @@ function create(data) {
 
 export default {
   findAll,
-  create
+  create,
+  findById,
+  update,
+  remove
 };
+
+function findById(id) {
+  const products = readAll();
+
+  return products.find((product) => product.id === id);
+}
+
+function update(id, data) {
+  const products = readAll();
+
+  const index = products.findIndex((product) => product.id === id);
+
+  if (index === -1) {
+    return null;
+  }
+
+  const updatedProduct = {
+    id,
+    ...data,
+  };
+
+  products[index] = updatedProduct;
+
+  writeAll(products);
+
+  return updatedProduct;
+}
+
+function remove(id) {
+  const products = readAll();
+
+  const index = products.findIndex((product) => product.id === id);
+
+  if (index === -1) {
+    return false;
+  }
+
+  products.splice(index, 1);
+
+  writeAll(products);
+
+  return true;
+}
