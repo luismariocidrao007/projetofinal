@@ -38,7 +38,16 @@ export default {
 };
 
 function getById(req, res) {
-  const id = Number(req.params.id);
+  const id = Number(req.params.id)
+    if (isNaN(id)) {
+
+    return res.status(400).json({
+
+      error: 'ID inválido'
+
+    });
+
+  };
 
   const product = repo.findById(id);
 
@@ -55,7 +64,11 @@ function update(req, res) {
   const id = Number(req.params.id);
 
   const { title, price, description, category, image, rating } = req.body;
-
+  if (typeof price !== 'number' || price < 10) {
+  return res.status(400).json({
+    error: 'Preço inválido'
+  });
+}
   const updatedProduct = repo.update(id, {
     title,
     price: Number(price),
