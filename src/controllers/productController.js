@@ -2,7 +2,22 @@ import repo from '../repositories/productRepository.js';
 
 // GET /products
 function getAll(req, res) {
+  const { category, search } = req.query;
+
+  if (category) {
+    const products = repo.findByCategory(category);
+
+    return res.json(products);
+  }
+
+  if (search) {
+    const products = repo.searchByTitle(search);
+
+    return res.json(products);
+  }
+
   const products = repo.findAll();
+
   res.json(products);
 }
 
@@ -34,6 +49,7 @@ export default {
   create,
   getById,
   update,
+  patch,
   remove
 };
 
@@ -99,4 +115,18 @@ function remove(req, res) {
   }
 
   res.status(204).send();
+}
+
+function patch(req, res) {
+  const id = Number(req.params.id);
+
+  const updatedProduct = repo.patch(id, req.body);
+
+  if (!updatedProduct) {
+    return res.status(404).json({
+      error: "Produto não encontrado",
+    });
+  }
+
+  res.json(updatedProduct);
 }

@@ -90,3 +90,62 @@ function remove(id) {
 
   return true;
 }
+
+function patch(id, data) {
+  const products = readAll();
+
+  const index = products.findIndex((product) => product.id === id);
+
+  if (index === -1) {
+    return null;
+  }
+
+  const updatedProduct = {
+    ...products[index],
+    ...data,
+    id,
+  };
+
+  products[index] = updatedProduct;
+
+  writeAll(products);
+
+  return updatedProduct;
+}
+
+function findByCategory(category) {
+  const products = readAll();
+
+  return products.filter(
+    (product) =>
+      product.category.toLowerCase() === category.toLowerCase()
+  );
+}
+
+function findByCategory(category) {
+  const products = readAll();
+
+  return products.filter(
+    (product) =>
+      product.category.toLowerCase() === category.toLowerCase()
+  );
+}
+
+function searchByTitle(search) {
+  const products = readAll();
+
+  return products.filter((product) =>
+    product.title.toLowerCase().includes(search.toLowerCase())
+  );
+}
+
+export default {
+  findAll,
+  findById,
+  findByCategory,
+  searchByTitle,
+  create,
+  update,
+  patch,
+  remove,
+};

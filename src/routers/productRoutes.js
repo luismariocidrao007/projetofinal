@@ -4,11 +4,14 @@ import productController from "../controllers/productController.js";
 const router = Router();
 
 router.get("/", productController.getAll);
+
 router.get("/:id", productController.getById);
 
 router.post("/", productController.create);
 
 router.put("/:id", productController.update);
+
+router.patch("/:id", productController.patch);
 
 router.delete("/:id", productController.remove);
 
